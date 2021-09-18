@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "ES2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@zozitech/sequelize": ["libs/sequelize/src/index.ts"],
+      "@zozitech/shared": ["libs/shared/src/index.ts"],
+      "@zozitech/wallet/withdraw": ["libs/withdraw/src/index.ts"],
+      "@zozitech/peatio": ["libs/peatio/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
