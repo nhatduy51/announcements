@@ -6,11 +6,21 @@ import { get } from 'lodash';
 class peatioController {
   async getpeatios(req: RequestCustom, res: Response) {
     try {
-      const membersCount = await peatioModel.members.count();
-      const marketsCount = await peatioModel.markets.count();
+      const membersCount = await peatioModel.members.count({
+        where: {
+          state: 'active',
+        },
+      });
+      const marketsCount = await peatioModel.markets.count({
+        where: { state: 'enabled' },
+      });
       const childCurrencies = await walletModel.child_currencies.findAll({});
       const childs = childCurrencies.map((child) => child.child_id);
-      const currencies = await peatioModel.currencies.findAll();
+      const currencies = await peatioModel.currencies.findAll({
+        where: {
+          visible: 1,
+        },
+      });
       const currenciesCount = currencies.filter(
         (currency) => !childs.includes(currency.id)
       ).length;
