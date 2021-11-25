@@ -1,5 +1,5 @@
 import * as express from 'express';
-import holderController from '../controllers/peatio';
+import holderController from '../controllers/announcement';
 const privateRouter = express.Router();
 
 // privateRouter.get('/get', holderController.getHolderInfo);

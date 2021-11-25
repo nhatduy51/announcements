@@ -5,4 +5,5 @@ export const mysqlConfig = {
   passMysql: process.env.DATABASE_PASS,
   peatioDbName: 'peatio_production',
   walletDbName: 'wallet_production',
+  announcementDbName: 'announcement'
 };
